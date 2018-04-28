@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Sites list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Icao</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for site in sites %}
+            <tr>
+                <td><a href="{{ path('site_show', { 'id': site.id }) }}">{{ site.id }}</a></td>
+                <td>{{ site.name }}</td>
+                <td>{{ site.icao }}</td>
+                <td>{{ site.latitude }}</td>
+                <td>{{ site.longitude }}</td>
+                <td>{{ site.city }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('site_show', { 'id': site.id }) }}">show</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

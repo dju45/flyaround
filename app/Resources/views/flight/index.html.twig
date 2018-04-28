@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Flights list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nbfreeseats</th>
+                <th>Seatprice</th>
+                <th>Takeofftime</th>
+                <th>Publicationdate</th>
+                <th>Description</th>
+                <th>Wasdone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for flight in flights %}
+            <tr>
+                <td><a href="{{ path('flight_show', { 'id': flight.id }) }}">{{ flight.id }}</a></td>
+                <td>{{ flight.nbFreeSeats }}</td>
+                <td>{{ flight.seatPrice }}</td>
+                <td>{% if flight.takeOffTime %}{{ flight.takeOffTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if flight.publicationDate %}{{ flight.publicationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ flight.description }}</td>
+                <td>{% if flight.wasDone %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('flight_show', { 'id': flight.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('flight_edit', { 'id': flight.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('flight_new') }}">Create a new flight</a>
+        </li>
+    </ul>
+{% endblock %}

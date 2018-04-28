@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Site</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ site.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ site.name }}</td>
+            </tr>
+            <tr>
+                <th>Icao</th>
+                <td>{{ site.icao }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ site.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ site.longitude }}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{ site.city }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('site_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

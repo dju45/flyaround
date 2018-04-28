@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Planemodel</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ planeModel.id }}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{ planeModel.model }}</td>
+            </tr>
+            <tr>
+                <th>Manufacturer</th>
+                <td>{{ planeModel.manufacturer }}</td>
+            </tr>
+            <tr>
+                <th>Cruisespeed</th>
+                <td>{{ planeModel.cruiseSpeed }}</td>
+            </tr>
+            <tr>
+                <th>Planenbseats</th>
+                <td>{{ planeModel.planeNbSeats }}</td>
+            </tr>
+            <tr>
+                <th>Isavailable</th>
+                <td>{% if planeModel.isAvailable %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('planemodel_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('planemodel_edit', { 'id': planeModel.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
