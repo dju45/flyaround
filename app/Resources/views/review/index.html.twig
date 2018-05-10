@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <h1>Review</h1>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>Review's author</th>
+            <td>{{ review.reviewAuthor }}</td>
+        </tr>
+        <tr>
+            <th>Review Number </th>
+            <td>{{ review.id }}</td>
+        </tr>
+        <tr>
+            <th>Text</th>
+            <td>{{ review.text }}</td>
+        </tr>
+        <tr>
+            <th>Publication date :</th>
+            <td>{{ review.publicationDate|date('Y-m-d') }}</td>
+        </tr>
+        <tr>
+            <th>Note</th>
+            <td>{{ review.note }}</td>
+        </tr>
+        <tr>
+            <th>User Rated</th>
+            <td>{{ review.userRated }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('review_new') }}">Create a new review</a>
+        </li>
+    </ul>
+{% endblock %}
+
+
+
