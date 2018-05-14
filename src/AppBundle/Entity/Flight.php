@@ -355,6 +355,7 @@ class Flight
     {
         return $this->pilot;
     }
+
     /**
      * Constructor
      */
