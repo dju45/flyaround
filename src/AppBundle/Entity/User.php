@@ -2,15 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="`user`")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User
+class User extends BaseUser
 {
     /*
      * personal methods / variables
@@ -47,7 +48,7 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -80,14 +81,14 @@ class User
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="creationDate", type="datetime")
+     * @ORM\Column(name="creationDate", type="datetime", nullable=true)
      */
     private $creationDate;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="note", type="smallint")
+     * @ORM\Column(name="note", type="smallint", nullable=true)
      */
     private $note;
 
@@ -281,6 +282,7 @@ class User
      */
     public function __construct()
     {
+        parent::__construct();
         $this->reviewAuthors = new \Doctrine\Common\Collections\ArrayCollection();
         $this->pilots = new \Doctrine\Common\Collections\ArrayCollection();
     }
