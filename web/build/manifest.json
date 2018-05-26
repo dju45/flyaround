@@ -1,0 +1,7 @@
+{
+  "web/vendor.js": "/web/vendor.js",
+  "web/style.js": "/web/style.js",
+  "web/style.css": "/web/style.css",
+  "web/app.js": "/web/app.js",
+  "web/manifest.js": "/web/manifest.js"
+}
