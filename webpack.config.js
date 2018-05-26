@@ -7,9 +7,12 @@ Encore
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .addEntry('style', './assets/scss/main.scss')
-    .enableSassLoader()
     .createSharedEntry('vendor', [
         'jquery',
-    ]);
+        'bootstrap',
+    ])
+    .enableSassLoader(function(sassOptions) {}, {
+            resolveUrlLoader: false
+     });
 
 module.exports = Encore.getWebpackConfig()
