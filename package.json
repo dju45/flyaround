@@ -1,0 +1,26 @@
+{
+  "name": "flyaround",
+  "version": "1.0.0",
+  "description": "flyaround =========",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "webpack-notifier": "^1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dju45/flyaround.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dju45/flyaround/issues"
+  },
+  "homepage": "https://github.com/dju45/flyaround#readme"
+}
