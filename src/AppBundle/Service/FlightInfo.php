@@ -61,9 +61,14 @@ class FlightInfo
         return $d;
     }
 
-    public function getTime()
+    /**
+     * @param $distance
+     * @param $speed
+     * @return float
+     */
+    public function getTime($distance,$speed) :float
     {
 
-
+        return $distance/$speed;
     }
 }
