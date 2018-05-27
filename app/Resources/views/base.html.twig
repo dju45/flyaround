@@ -4,10 +4,59 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+            <link rel="stylesheet" href="{{ asset('build/style.css') }}">
     </head>
+    <header>
+        <nav class="navbar navbar-dark bg-primary">
+            <!-- Navbar Container -->
+            <div class="container">
+
+                <!-- Navbar Header [contains both toggle button and navbar brand] -->
+                <div class="navbar-header">
+                    <!-- Toggle Button [handles opening navbar components on mobile screens]-->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#exampleNavComponents" aria-expanded="false">
+                        <i class="glyphicon glyphicon-align-center"></i>
+                    </button>
+
+                    <!-- Navbar Brand -->
+                    <a href="/" class="navbar-brand">
+                        FLYAROUND
+                    </a>
+                </div>
+
+
+                <!-- Navbar Collapse [contains navbar components such as navbar menu and forms ] -->
+                <div class="collapse navbar-collapse" id="exampleNavComponents">
+
+                    <!-- Navbar Menu -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{{ path('planemodel_index') }}">Voir les avions</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('reservation_index') }}">Voir les reservations</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('flight_index') }}">Voir les vols</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('site_index') }}">Voir les terrains</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('review_index') }}">Voir les reviews</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/app.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
