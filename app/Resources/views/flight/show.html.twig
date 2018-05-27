@@ -33,6 +33,10 @@
                 <th>Wasdone</th>
                 <td>{% if flight.wasDone %}Yes{% else %}No{% endif %}</td>
             </tr>
+            <tr>
+                <th>Distance</th>
+                <td>{% if distance %}{{ distance|number_format(2, ',', ' ') }}{% endif %} {{ _unit }}</td>
+            </tr>
         </tbody>
     </table>
 
