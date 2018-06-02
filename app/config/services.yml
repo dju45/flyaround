@@ -37,3 +37,4 @@ services:
     AppBundle\Service\FlightInfo:
         arguments:
             $_unit: '%_unit%'
+
