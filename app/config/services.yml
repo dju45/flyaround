@@ -36,4 +36,4 @@ services:
 
     AppBundle\Service\FlightInfo:
         arguments:
-            $_unit: km
+            $_unit: '%_unit%'
